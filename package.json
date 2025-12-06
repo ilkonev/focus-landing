@@ -1,9 +1,9 @@
 {
-  "name": "vite_react_shadcn_ts",
+  "name": "focus-landing",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://ilkonev.github.io/focus-landing",
+  "homepage": "https://ilkonev.github.io/focus-landing/",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
