@@ -47,9 +47,11 @@ const EarlyAccessForm = ({ buttonText = "Получить ранний дост�
     
     try {
       const googleSheetsUrl = import.meta.env.VITE_GOOGLE_SHEETS_URL;
+      const env = import.meta.env.VITE_GOOGLE_SHEETS_URL;
+
+      console.log(env);
       
       if (!googleSheetsUrl) {
-        // Если URL не настроен, просто показываем успешное сообщение
         console.warn('VITE_GOOGLE_SHEETS_URL не настроен. Заявка не будет сохранена в Google Таблицу.');
         await new Promise((resolve) => setTimeout(resolve, 1000));
         
