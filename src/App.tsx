@@ -27,7 +27,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <BrowserRouter basename="/focus-landing">
         <PageTracker />
         <Routes>
           <Route path="/" element={<Index />} />
