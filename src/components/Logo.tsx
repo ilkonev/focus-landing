@@ -11,7 +11,7 @@ const Logo = ({ className = "", size = 36 }: LogoProps) => {
   
   return (
     <div>
-      <img src="public/favicon.png" height={size} width={size} />
+      <img src="favicon.png" height={size} width={size} />
     </div>
   );
 };
