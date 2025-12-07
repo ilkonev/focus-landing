@@ -8,12 +8,9 @@ const Footer = () => {
       <div className="section-container">
         <div className="flex flex-col md:flex-row items-center gap-6">
           {/* Logo and Social */}
-          <div className="flex flex-col items-center md:items-start gap-4">
-            <div className="flex items-center gap-2.5">
-              <Logo size={36} />
-              <span className="font-bold text-xl text-foreground">Focus</span>
-            </div>
-            
+          <div className="flex flex-col items-center gap-4">
+            <Logo size={72} />
+
             {/* Social Links */}
             <div className="flex items-center gap-4">
               <a

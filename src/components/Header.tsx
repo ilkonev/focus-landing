@@ -35,9 +35,8 @@ const Header = () => {
         {/* Logo */}
         <a href="#" className="flex items-center gap-2.5 group">
           <div className="transition-transform duration-300 group-hover:scale-105">
-            <Logo size={36} />
+            <Logo size={72} />
           </div>
-          <span className="font-bold text-xl text-foreground">Focus</span>
         </a>
 
         {/* Desktop Navigation */}
