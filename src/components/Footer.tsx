@@ -9,7 +9,9 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row items-center gap-6">
           {/* Logo and Social */}
           <div className="flex flex-col items-center gap-4">
-            <Logo size={72} />
+            <div className="w-12 h-12 sm:w-16 sm:h-16 md:w-[72px] md:h-[72px]">
+              <Logo size={72} className="w-full h-full" />
+            </div>
 
             {/* Social Links */}
             <div className="flex items-center gap-4">

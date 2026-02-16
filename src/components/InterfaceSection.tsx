@@ -141,7 +141,7 @@ const InterfaceSection = () => {
   }, []);
 
   return (
-    <section id="interface" ref={sectionRef} className="py-24 md:py-32 bg-secondary/30">
+    <section id="interface" ref={sectionRef} className="py-16 sm:py-20 md:py-24 lg:py-32 bg-secondary/30">
       <div className="section-container">
         <div ref={animationRef} className="text-center max-w-3xl mx-auto mb-16">
           <h2 
@@ -160,7 +160,7 @@ const InterfaceSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8 max-w-5xl mx-auto">
           {screens.map((screen, index) => (
             <div 
               key={index} 

@@ -6,12 +6,12 @@ const PhoneMockup = () => {
       {/* Glow effect */}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-primary/5 blur-3xl rounded-full scale-110 animate-pulse-glow" />
       
-      {/* Phone frame */}
-      <div className="relative w-[280px] h-[560px] md:w-[300px] md:h-[600px] rounded-[3rem] bg-foreground p-2 shadow-2xl">
+      {/* Phone frame - responsive: smaller on narrow screens */}
+      <div className="relative w-[240px] h-[480px] sm:w-[280px] sm:h-[560px] md:w-[300px] md:h-[600px] rounded-[2.5rem] sm:rounded-[3rem] bg-foreground p-1.5 sm:p-2 shadow-2xl">
         {/* Screen */}
-        <div className="w-full h-full bg-background rounded-[2.5rem] overflow-hidden">
+        <div className="w-full h-full bg-background rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden">
           {/* Status bar */}
-          <div className="flex items-center justify-between px-6 py-3">
+          <div className="flex items-center justify-between px-4 sm:px-6 py-2 sm:py-3">
             <span className="text-xs font-medium text-muted-foreground">9:41</span>
             <div className="flex items-center gap-1">
               <div className="w-6 h-3 bg-foreground rounded-sm" />
@@ -19,7 +19,7 @@ const PhoneMockup = () => {
           </div>
 
           {/* App content */}
-          <div className="p-5 space-y-5">
+          <div className="p-3 sm:p-5 space-y-3 sm:space-y-5">
             {/* Header */}
             <div className="text-center space-y-2">
               <p className="text-xs text-muted-foreground font-medium">Сегодня</p>

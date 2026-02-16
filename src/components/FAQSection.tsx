@@ -94,16 +94,16 @@ const FAQSection = () => {
   ];
 
   return (
-    <section id="faq" ref={sectionRef} className="section-container py-16 md:py-24">
-      <div className="max-w-5xl mx-auto rounded-3xl border border-border/60 bg-secondary/20 p-6 md:p-10">
-        <div className="grid gap-8 md:gap-12 md:grid-cols-[minmax(0,1.05fr)_minmax(0,1.4fr)] items-start">
+    <section id="faq" ref={sectionRef} className="section-container py-12 md:py-16 lg:py-24">
+      <div className="max-w-5xl mx-auto rounded-2xl md:rounded-3xl border border-border/60 bg-secondary/20 p-4 sm:p-6 md:p-10">
+        <div className="grid gap-6 md:gap-8 lg:gap-12 md:grid-cols-[minmax(0,1.05fr)_minmax(0,1.4fr)] items-start">
           <div className="space-y-5">
             <div className="inline-flex items-center gap-2 rounded-full border border-border/60 bg-background/60 px-3 py-1 text-xs font-medium text-muted-foreground">
               <HelpCircle className="h-3.5 w-3.5 text-primary" />
               FAQ
             </div>
             <div className="space-y-3">
-              <h2 className="text-3xl md:text-4xl font-extrabold tracking-tight text-foreground">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-foreground">
                 Вопросы и ответы
               </h2>
               <p className="text-muted-foreground">
@@ -118,10 +118,10 @@ const FAQSection = () => {
               <AccordionItem
                 key={item.value}
                 value={item.value}
-                className="border border-border/40 rounded-xl px-4 md:px-6"
+                className="border border-border/40 rounded-xl px-3 sm:px-4 md:px-6"
               >
                 <AccordionTrigger 
-                  className="text-left text-base font-semibold text-foreground hover:no-underline"
+                  className="text-left text-sm sm:text-base font-semibold text-foreground hover:no-underline py-3 sm:py-4 break-words"
                   onClick={() => trackFAQOpen(item.question)}
                 >
                   {item.question}

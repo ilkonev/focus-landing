@@ -48,7 +48,7 @@ const HowItWorksSection = () => {
   }, []);
 
   return (
-    <section id="how-it-works" ref={sectionRef} className="py-24 md:py-32 bg-background relative overflow-hidden">
+    <section id="how-it-works" ref={sectionRef} className="py-16 sm:py-20 md:py-24 lg:py-32 bg-background relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/3 rounded-full blur-3xl pointer-events-none" />
       
@@ -73,7 +73,7 @@ const HowItWorksSection = () => {
               }`}
               style={{ transitionDelay: `${(index + 1) * 150}ms` }}
             >
-              <div className="card-interactive p-8 h-full">
+              <div className="card-interactive p-6 sm:p-8 h-full">
                 {/* Number badge */}
                 <span className="text-6xl font-extrabold text-primary/10 absolute top-6 right-6 transition-all duration-300 group-hover:text-primary/20">
                   {feature.number}

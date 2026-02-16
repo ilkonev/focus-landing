@@ -25,17 +25,17 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 pt-[env(safe-area-inset-top)] ${
         isScrolled
           ? "bg-background/80 backdrop-blur-xl shadow-sm"
           : "bg-transparent"
       }`}
     >
-      <div className="section-container flex items-center justify-between h-16 md:h-20">
-        {/* Logo */}
-        <a href="#" className="flex items-center gap-2.5 group">
-          <div className="transition-transform duration-300 group-hover:scale-105">
-            <Logo size={72} />
+      <div className="section-container flex items-center justify-between h-16 md:h-20 min-h-16">
+        {/* Logo - responsive size: 40px mobile, 72px desktop */}
+        <a href="#" className="flex items-center gap-2.5 group shrink-0">
+          <div className="transition-transform duration-300 group-hover:scale-105 w-10 h-10 md:w-[72px] md:h-[72px]">
+            <Logo size={72} className="w-full h-full" />
           </div>
         </a>
 
@@ -64,7 +64,7 @@ const Header = () => {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden p-2 text-foreground hover:bg-secondary rounded-lg transition-colors"
+          className="md:hidden p-2 -mr-2 text-foreground hover:bg-secondary rounded-lg transition-colors touch-manipulation"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -73,8 +73,8 @@ const Header = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden bg-background/95 backdrop-blur-xl border-t border-border animate-fade-in">
-          <nav className="section-container py-6 flex flex-col gap-2">
+        <div className="md:hidden bg-background/95 backdrop-blur-xl border-t border-border animate-fade-in max-h-[calc(100vh-4rem)] overflow-y-auto">
+          <nav className="section-container py-4 px-4 sm:px-6 flex flex-col gap-1">
             {navLinks.map((link) => (
               <a
                 key={link.href}

@@ -52,7 +52,7 @@ const ResultsSection = () => {
   }, []);
 
   return (
-    <section id="results" ref={sectionRef} className="py-24 md:py-32 bg-secondary/30">
+    <section id="results" ref={sectionRef} className="py-16 sm:py-20 md:py-24 lg:py-32 bg-secondary/30">
       <div className="section-container">
         <div ref={animationRef} className="text-center max-w-3xl mx-auto mb-16">
           <h2 
@@ -76,7 +76,7 @@ const ResultsSection = () => {
           {stats.map((stat, index) => (
             <div
               key={index}
-              className={`card-interactive p-6 transition-all duration-700 ${
+              className={`card-interactive p-4 sm:p-6 transition-all duration-700 ${
                 isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
               }`}
               style={{ transitionDelay: `${(index + 2) * 100}ms` }}
