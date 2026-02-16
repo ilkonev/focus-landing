@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { Checkbox } from "@/components/ui/checkbox";
 import { useToast } from "@/hooks/use-toast";
 import { ArrowRight, Loader2 } from "lucide-react";
 import { trackFormStart, trackFormSubmit } from "@/lib/analytics";
@@ -13,6 +15,7 @@ interface EarlyAccessFormProps {
 const EarlyAccessForm = ({ buttonText = "Получить ранний доступ", variant = "hero" }: EarlyAccessFormProps) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
+  const [consent, setConsent] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const { toast } = useToast();
   const hasTrackedStart = useRef(false);
@@ -38,6 +41,15 @@ const EarlyAccessForm = ({ buttonText = "Получить ранний дост�
       toast({
         title: "Заполните все поля",
         description: "Пожалуйста, введите имя и контакты",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    if (!consent) {
+      toast({
+        title: "Необходимо согласие",
+        description: "Дайте согласие на обработку персональных данных для отправки заявки",
         variant: "destructive",
       });
       return;
@@ -116,6 +128,7 @@ const EarlyAccessForm = ({ buttonText = "Получить ранний дост�
     } finally {
       setName("");
       setEmail("");
+      setConsent(false);
       setIsLoading(false);
     }
   };
@@ -136,6 +149,19 @@ const EarlyAccessForm = ({ buttonText = "Получить ранний дост�
         onChange={(e) => setEmail(e.target.value)}
         className="h-12 bg-secondary/50 border-0 text-foreground placeholder:text-muted-foreground focus:bg-secondary rounded-xl transition-all duration-300"
       />
+      <label className="flex items-start gap-3 cursor-pointer group">
+        <Checkbox
+          checked={consent}
+          onCheckedChange={(checked) => setConsent(checked === true)}
+          className="mt-0.5 rounded border-muted-foreground/50 data-[state=checked]:bg-foreground data-[state=checked]:border-foreground"
+        />
+        <span className="text-sm text-muted-foreground leading-tight group-hover:text-foreground/90 transition-colors">
+          Даю согласие на{" "}
+          <Link to="/privacy" className="underline hover:no-underline text-foreground/90" target="_blank" rel="noopener noreferrer">
+            обработку персональных данных
+          </Link>
+        </span>
+      </label>
       <Button
         type="submit"
         className="w-full h-12 rounded-xl bg-foreground text-background hover:bg-foreground/90 font-semibold text-base transition-all duration-300 hover:scale-[1.02]"

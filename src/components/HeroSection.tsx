@@ -1,4 +1,3 @@
-import EarlyAccessForm from "./EarlyAccessForm";
 import PhoneMockup from "./PhoneMockup";
 import { useSectionView } from "@/hooks/use-analytics";
 import { trackLinkClick } from "@/lib/analytics";
@@ -31,13 +30,9 @@ const HeroSection = () => {
               </p>
             </div>
 
-            <div className="animate-fade-in-up-delay-2">
-              <EarlyAccessForm />
-            </div>
-
             <a
               href="#how-it-works"
-              className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-all duration-300 animate-fade-in-up-delay-3 group"
+              className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-all duration-300 animate-fade-in-up-delay-2 group"
               onClick={() => trackLinkClick('Узнать больше', '#how-it-works', 'hero')}
             >
               Узнать больше

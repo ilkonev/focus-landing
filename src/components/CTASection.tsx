@@ -1,4 +1,5 @@
-import EarlyAccessForm from "./EarlyAccessForm";
+import { Link } from "react-router-dom";
+import YandexFormEmbed from "./YandexFormEmbed";
 import { Shield } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { useSectionView } from "@/hooks/use-analytics";
@@ -55,7 +56,7 @@ const CTASection = () => {
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
           >
-            <EarlyAccessForm buttonText="Стать первым" variant="cta" />
+            <YandexFormEmbed />
           </div>
 
           <div 
@@ -63,8 +64,10 @@ const CTASection = () => {
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
           >
-            <Shield className="w-4 h-4" />
-            <span>Конфиденциальность гарантирована</span>
+            <Shield className="w-4 h-4 shrink-0" />
+            <Link to="/privacy" className="underline hover:no-underline hover:text-foreground transition-colors">
+              Политика конфиденциальности
+            </Link>
           </div>
         </div>
       </div>
