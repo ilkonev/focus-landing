@@ -36,14 +36,15 @@ export const trackPerformanceMetrics = () => {
           }
         });
         
-        // Отправляем метрики в консоль (можно расширить для отправки в аналитику)
-        console.log('Performance Metrics:', {
-          ttfb: Math.round(ttfb),
-          fcp: Math.round(fcp),
-          lcp: Math.round(lcp),
-          tbt: Math.round(tbt),
-          cls: cls.toFixed(3),
-        });
+        if (import.meta.env.DEV) {
+          console.log('Performance Metrics:', {
+            ttfb: Math.round(ttfb),
+            fcp: Math.round(fcp),
+            lcp: Math.round(lcp),
+            tbt: Math.round(tbt),
+            cls: cls.toFixed(3),
+          });
+        }
         
         // Можно добавить отправку в Google Analytics через Custom Events
         // trackEvent('performance_metric', {
@@ -62,7 +63,7 @@ export const trackResourceErrors = () => {
   }
 
   window.addEventListener('error', (event) => {
-    if (event.target && (event.target as HTMLElement).tagName) {
+    if (import.meta.env.DEV && event.target && (event.target as HTMLElement).tagName) {
       const target = event.target as HTMLElement;
       console.error('Resource Error:', {
         tag: target.tagName,
