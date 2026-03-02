@@ -4,8 +4,6 @@ import { Smartphone } from "lucide-react";
 import { useSectionView } from "@/hooks/use-analytics";
 import { trackLinkClick, trackCTAClick } from "@/lib/analytics";
 
-const ANDROID_DOWNLOAD_URL = "https://disk.360.yandex.ru/d/RZDeqwglGkVtqw";
-
 const HeroSection = () => {
   const sectionRef = useSectionView('Hero');
 
@@ -41,9 +39,7 @@ const HeroSection = () => {
                 className="rounded-full px-8 h-12 text-base font-semibold gap-2 shadow-lg hover:shadow-xl w-full sm:w-auto"
               >
                 <a
-                  href={ANDROID_DOWNLOAD_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="#cta"
                   onClick={() => trackCTAClick('Скачать', 'hero')}
                 >
                   <Smartphone className="w-5 h-5" />
