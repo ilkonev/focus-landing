@@ -106,8 +106,8 @@ const HowItWorksSection = () => {
             size="lg"
             className="rounded-full px-8 h-12 text-base font-semibold"
           >
-            <a href="#cta" onClick={() => trackCTAClick('Оставить заявку', 'how-it-works')}>
-              Оставить заявку
+            <a href="#cta" onClick={() => trackCTAClick('Скачать', 'how-it-works')}>
+              Скачать
             </a>
           </Button>
         </div>
