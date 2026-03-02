@@ -11,12 +11,20 @@ import { trackPageView } from "./lib/analytics";
 
 const queryClient = new QueryClient();
 
+const YM_COUNTER_ID = 107069895;
+
 // Компонент для отслеживания изменений маршрута
 const PageTracker = () => {
   const location = useLocation();
 
   useEffect(() => {
-    trackPageView(location.pathname + location.search, document.title);
+    const path = location.pathname + location.search;
+    const title = document.title;
+    trackPageView(path, title);
+    // Просмотр страницы в Яндекс.Метрике при смене маршрута (SPA)
+    if (typeof window !== 'undefined' && window.ym) {
+      window.ym(YM_COUNTER_ID, 'hit', path, { title });
+    }
   }, [location]);
 
   return null;

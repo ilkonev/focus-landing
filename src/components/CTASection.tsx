@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import YandexFormEmbed from "./YandexFormEmbed";
-import { Shield } from "lucide-react";
+import { Shield, Download } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import { useEffect, useRef, useState } from "react";
 import { useSectionView } from "@/hooks/use-analytics";
 
@@ -57,6 +58,28 @@ const CTASection = () => {
             }`}
           >
             <YandexFormEmbed />
+          </div>
+
+          <div 
+            className={`flex justify-center mb-8 transition-all duration-700 delay-250 ${
+              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+            }`}
+          >
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className="gap-2"
+            >
+              <a
+                href="https://disk.360.yandex.ru/d/RZDeqwglGkVtqw"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Download className="w-5 h-5" />
+                Скачать приложение
+              </a>
+            </Button>
           </div>
 
           <div 
