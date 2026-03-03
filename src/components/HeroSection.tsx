@@ -1,6 +1,8 @@
 import PhoneMockup from "./PhoneMockup";
+import { Button } from "@/components/ui/button";
+import { Smartphone } from "lucide-react";
 import { useSectionView } from "@/hooks/use-analytics";
-import { trackLinkClick } from "@/lib/analytics";
+import { trackLinkClick, trackCTAClick } from "@/lib/analytics";
 
 const HeroSection = () => {
   const sectionRef = useSectionView('Hero');
@@ -30,8 +32,22 @@ const HeroSection = () => {
               </p>
             </div>
 
-            <a
-              href="#how-it-works"
+            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 animate-fade-in-up-delay-2">
+              <Button
+                asChild
+                size="lg"
+                className="rounded-full px-8 h-12 text-base font-semibold gap-2 shadow-lg hover:shadow-xl w-full sm:w-auto"
+              >
+                <a
+                  href="#cta"
+                  onClick={() => trackCTAClick('Скачать', 'hero')}
+                >
+                  <Smartphone className="w-5 h-5" />
+                  Скачать
+                </a>
+              </Button>
+              <a
+                href="#how-it-works"
               className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-all duration-300 animate-fade-in-up-delay-2 group"
               onClick={() => trackLinkClick('Узнать больше', '#how-it-works', 'hero')}
             >
@@ -45,6 +61,7 @@ const HeroSection = () => {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
               </svg>
             </a>
+            </div>
           </div>
 
           {/* Right: Phone mockup */}
