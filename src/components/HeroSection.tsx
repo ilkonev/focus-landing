@@ -1,14 +1,11 @@
 import PhoneMockup from "./PhoneMockup";
 import { Button } from "@/components/ui/button";
 import { Smartphone } from "lucide-react";
-import { useSectionView } from "@/hooks/use-analytics";
-import { trackLinkClick, trackCTAClick } from "@/lib/analytics";
 
 const HeroSection = () => {
-  const sectionRef = useSectionView('Hero');
 
   return (
-    <section ref={sectionRef} className="relative min-h-screen flex items-center overflow-hidden pt-16 md:pt-20 pb-8 bg-background">
+    <section className="relative min-h-screen flex items-center overflow-hidden pt-16 md:pt-20 pb-8 bg-background">
       {/* Decorative background elements - scaled for mobile */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 left-1/4 w-[250px] h-[250px] sm:w-[400px] sm:h-[400px] lg:w-[500px] lg:h-[500px] bg-primary/5 rounded-full blur-3xl animate-pulse-glow" />
@@ -38,19 +35,12 @@ const HeroSection = () => {
                 size="lg"
                 className="rounded-full px-8 h-12 text-base font-semibold gap-2 shadow-lg hover:shadow-xl w-full sm:w-auto"
               >
-                <a
-                  href="#cta"
-                  onClick={() => trackCTAClick('Скачать', 'hero')}
-                >
+                <a href="#cta">
                   <Smartphone className="w-5 h-5" />
                   Скачать
                 </a>
               </Button>
-              <a
-                href="#how-it-works"
-              className="inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-all duration-300 animate-fade-in-up-delay-2 group"
-              onClick={() => trackLinkClick('Узнать больше', '#how-it-works', 'hero')}
-            >
+<a href="#how-it-works">
               Узнать больше
               <svg 
                 className="w-4 h-4 transition-transform duration-300 group-hover:translate-y-1" 

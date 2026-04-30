@@ -2,13 +2,11 @@ import { Link } from "react-router-dom";
 import { Shield, Smartphone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useEffect, useRef, useState } from "react";
-import { useSectionView } from "@/hooks/use-analytics";
 
 const ANDROID_DOWNLOAD_URL = "https://disk.360.yandex.ru/d/RZDeqwglGkVtqw";
 
 const CTASection = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useSectionView('CTA');
   const animationRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -33,7 +31,6 @@ const CTASection = () => {
   return (
     <section
       id="cta"
-      ref={sectionRef}
       className="py-16 sm:py-20 md:py-24 lg:py-32 bg-background relative overflow-hidden"
     >
       {/* Background effects */}

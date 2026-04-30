@@ -1,6 +1,5 @@
 import { BarChart3, Target, Lightbulb, TrendingUp, Trophy, Zap } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-import { useSectionView } from "@/hooks/use-analytics";
 
 const screens = [
   {
@@ -120,7 +119,6 @@ const screens = [
 
 const InterfaceSection = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useSectionView('Interface');
   const animationRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -141,7 +139,7 @@ const InterfaceSection = () => {
   }, []);
 
   return (
-    <section id="interface" ref={sectionRef} className="py-16 sm:py-20 md:py-24 lg:py-32 bg-secondary/30">
+    <section id="interface" className="py-16 sm:py-20 md:py-24 lg:py-32 bg-secondary/30">
       <div className="section-container">
         <div ref={animationRef} className="text-center max-w-3xl mx-auto mb-16">
           <h2 

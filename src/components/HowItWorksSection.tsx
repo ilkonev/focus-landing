@@ -1,8 +1,6 @@
 import { BarChart3, Gamepad2, Sparkles } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { useSectionView } from "@/hooks/use-analytics";
-import { trackCTAClick } from "@/lib/analytics";
 
 const features = [
   {
@@ -27,7 +25,6 @@ const features = [
 
 const HowItWorksSection = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useSectionView('HowItWorks');
   const animationRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -48,7 +45,7 @@ const HowItWorksSection = () => {
   }, []);
 
   return (
-    <section id="how-it-works" ref={sectionRef} className="py-16 sm:py-20 md:py-24 lg:py-32 bg-background relative overflow-hidden">
+    <section id="how-it-works" className="py-16 sm:py-20 md:py-24 lg:py-32 bg-background relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary/3 rounded-full blur-3xl pointer-events-none" />
       
@@ -106,7 +103,7 @@ const HowItWorksSection = () => {
             size="lg"
             className="rounded-full px-8 h-12 text-base font-semibold"
           >
-            <a href="#cta" onClick={() => trackCTAClick('Скачать', 'how-it-works')}>
+            <a href="#cta">
               Скачать
             </a>
           </Button>

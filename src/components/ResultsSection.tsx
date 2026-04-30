@@ -1,6 +1,5 @@
 import { TrendingDown, TrendingUp, Zap, Users } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-import { useSectionView } from "@/hooks/use-analytics";
 
 const stats = [
   {
@@ -31,7 +30,6 @@ const stats = [
 
 const ResultsSection = () => {
   const [isVisible, setIsVisible] = useState(false);
-  const sectionRef = useSectionView('Results');
   const animationRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -52,7 +50,7 @@ const ResultsSection = () => {
   }, []);
 
   return (
-    <section id="results" ref={sectionRef} className="py-16 sm:py-20 md:py-24 lg:py-32 bg-secondary/30">
+    <section id="results" className="py-16 sm:py-20 md:py-24 lg:py-32 bg-secondary/30">
       <div className="section-container">
         <div ref={animationRef} className="text-center max-w-3xl mx-auto mb-16">
           <h2 

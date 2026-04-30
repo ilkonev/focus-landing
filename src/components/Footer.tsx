@@ -1,7 +1,6 @@
 import { Send, Mail } from "lucide-react";
 import { Link } from "react-router-dom";
 import Logo from "./Logo";
-import { trackFooterClick } from "@/lib/analytics";
 
 const TELEGRAM_URL = "https://t.me/focus_ai_group";
 const EMAIL_URL = "mailto:focusgroup.and.co@gmail.com";
@@ -26,7 +25,6 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-xl bg-secondary hover:bg-primary/10 flex items-center justify-center transition-all duration-300 hover:scale-110 group"
                 aria-label="Telegram"
-                onClick={() => trackFooterClick("telegram", "Telegram", TELEGRAM_URL)}
               >
                 <Send className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors duration-300" />
               </a>
@@ -34,7 +32,6 @@ const Footer = () => {
                 href={EMAIL_URL}
                 className="w-10 h-10 rounded-xl bg-secondary hover:bg-primary/10 flex items-center justify-center transition-all duration-300 hover:scale-110 group"
                 aria-label="Email"
-                onClick={() => trackFooterClick("email", "Email", EMAIL_URL)}
               >
                 <Mail className="w-5 h-5 text-muted-foreground group-hover:text-primary transition-colors duration-300" />
               </a>
@@ -46,9 +43,6 @@ const Footer = () => {
             <Link
               to="/privacy"
               className="text-sm text-muted-foreground hover:text-foreground transition-colors duration-300 text-center"
-              onClick={() =>
-                trackFooterClick("privacy", "Политика конфиденциальности", "/privacy")
-              }
             >
               Политика конфиденциальности
             </Link>
@@ -61,7 +55,6 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
               className="px-3 py-1 rounded-full border border-border text-xs font-medium text-muted-foreground hover:text-primary hover:border-primary hover:bg-primary/5 transition-colors duration-300"
-              onClick={() => trackFooterClick("support", "Поддержать", SUPPORT_URL)}
             >
               Поддержать
             </a>

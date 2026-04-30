@@ -46,11 +46,7 @@ export const trackPerformanceMetrics = () => {
           });
         }
         
-        // Можно добавить отправку в Google Analytics через Custom Events
-        // trackEvent('performance_metric', {
-        //   metric_name: 'ttfb',
-        //   value: Math.round(ttfb),
-        // });
+        
       }
     }, 2000); // Даем время на сбор всех метрик
   });

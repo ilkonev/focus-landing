@@ -1,10 +1,7 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { HelpCircle } from "lucide-react";
-import { trackFAQOpen } from "@/lib/analytics";
-import { useSectionView } from "@/hooks/use-analytics";
 
 const FAQSection = () => {
-  const sectionRef = useSectionView('FAQ');
 
   const faqItems = [
     {
@@ -94,7 +91,7 @@ const FAQSection = () => {
   ];
 
   return (
-    <section id="faq" ref={sectionRef} className="section-container py-12 md:py-16 lg:py-24">
+    <section id="faq" className="section-container py-12 md:py-16 lg:py-24">
       <div className="max-w-5xl mx-auto rounded-2xl md:rounded-3xl border border-border/60 bg-secondary/20 p-4 sm:p-6 md:p-10">
         <div className="grid gap-6 md:gap-8 lg:gap-12 md:grid-cols-[minmax(0,1.05fr)_minmax(0,1.4fr)] items-start">
           <div className="space-y-5">
@@ -122,7 +119,6 @@ const FAQSection = () => {
               >
                 <AccordionTrigger 
                   className="text-left text-sm sm:text-base font-semibold text-foreground hover:no-underline py-3 sm:py-4 break-words"
-                  onClick={() => trackFAQOpen(item.question)}
                 >
                   {item.question}
                 </AccordionTrigger>

@@ -7,8 +7,7 @@ import { useEffect } from "react";
 import Index from "./pages/Index";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import NotFound from "./pages/NotFound";
-import { trackPageView } from "./lib/analytics";
-
+import { CookieConsent } from "./components/CookieConsent";
 const queryClient = new QueryClient();
 
 const YM_COUNTER_ID = 107069895;
@@ -20,7 +19,6 @@ const PageTracker = () => {
   useEffect(() => {
     const path = location.pathname + location.search;
     const title = document.title;
-    trackPageView(path, title);
     // Просмотр страницы в Яндекс.Метрике при смене маршрута (SPA)
     if (typeof window !== 'undefined' && window.ym) {
       window.ym(YM_COUNTER_ID, 'hit', path, { title });
@@ -37,6 +35,7 @@ const App = () => (
       <Sonner />
       <BrowserRouter basename="/">
         <PageTracker />
+        <CookieConsent />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />

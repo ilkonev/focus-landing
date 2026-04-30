@@ -2,7 +2,6 @@ import { Button } from "@/components/ui/button";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import Logo from "./Logo";
-import { trackLinkClick, trackCTAClick } from "@/lib/analytics";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -46,7 +45,6 @@ const Header = () => {
               key={link.href}
               href={link.href}
               className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-300"
-              onClick={() => trackLinkClick(link.label, link.href, 'header_desktop')}
             >
               {link.label}
             </a>
@@ -56,7 +54,7 @@ const Header = () => {
         {/* Desktop CTA */}
         <div className="hidden md:block">
           <Button variant="default" size="sm" className="rounded-full px-6" asChild>
-            <a href="#cta" onClick={() => trackCTAClick('Получить доступ', 'header_desktop')}>
+            <a href="#cta">
               Получить доступ
             </a>
           </Button>
@@ -80,10 +78,7 @@ const Header = () => {
                 key={link.href}
                 href={link.href}
                 className="text-muted-foreground hover:text-foreground hover:bg-secondary transition-all duration-300 py-3 px-4 rounded-xl"
-                onClick={() => {
-                  setIsMobileMenuOpen(false);
-                  trackLinkClick(link.label, link.href, 'header_mobile');
-                }}
+                onClick={() => setIsMobileMenuOpen(false)}
               >
                 {link.label}
               </a>
@@ -91,10 +86,7 @@ const Header = () => {
             <Button variant="default" className="w-full mt-4 rounded-full" asChild>
               <a 
                 href="#cta" 
-                onClick={() => {
-                  setIsMobileMenuOpen(false);
-                  trackCTAClick('Получить доступ', 'header_mobile');
-                }}
+                onClick={() => setIsMobileMenuOpen(false)}
               >
                 Получить доступ
               </a>
