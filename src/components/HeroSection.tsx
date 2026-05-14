@@ -1,6 +1,6 @@
 import PhoneMockup from "./PhoneMockup";
 import { Button } from "@/components/ui/button";
-import { Smartphone } from "lucide-react";
+import { Send, Smartphone } from "lucide-react";
 
 const HeroSection = () => {
 
@@ -29,28 +29,45 @@ const HeroSection = () => {
               </p>
             </div>
 
-            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 animate-fade-in-up-delay-2">
-              <Button
-                asChild
-                size="lg"
-                className="rounded-full px-8 h-12 text-base font-semibold gap-2 shadow-lg hover:shadow-xl w-full sm:w-auto"
-              >
-                <a href="#cta">
-                  <Smartphone className="w-5 h-5" />
-                  Скачать
-                </a>
-              </Button>
-<a href="#how-it-works">
-              Узнать больше
-              <svg 
-                className="w-4 h-4 transition-transform duration-300 group-hover:translate-y-1" 
-                fill="none" 
-                viewBox="0 0 24 24" 
-                stroke="currentColor"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-              </svg>
-            </a>
+            <div className="flex flex-col items-center gap-4 animate-fade-in-up-delay-2">
+              <div className="flex flex-col sm:flex-row items-center gap-4 w-full sm:w-auto">
+                <Button
+                  asChild
+                  size="lg"
+                  className="rounded-full px-8 h-12 text-base font-semibold gap-2 shadow-lg hover:shadow-xl w-full sm:w-auto"
+                >
+                  <a href="#cta">
+                    <Smartphone className="w-5 h-5" />
+                    Скачать
+                  </a>
+                </Button>
+                <Button
+                  asChild
+                  variant="outline"
+                  size="lg"
+                  className="rounded-full px-8 h-12 text-base font-semibold gap-2 w-full sm:w-auto"
+                >
+                  <a
+                    href="https://t.me/focus_ai_group"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Send className="w-5 h-5" />
+                    Наш Telegram
+                  </a>
+                </Button>
+              </div>
+              <a href="#how-it-works" className="group inline-flex items-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-300">
+                Узнать больше
+                <svg 
+                  className="w-4 h-4 transition-transform duration-300 group-hover:translate-y-1" 
+                  fill="none" 
+                  viewBox="0 0 24 24" 
+                  stroke="currentColor"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                </svg>
+              </a>
             </div>
           </div>
 
