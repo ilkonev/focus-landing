@@ -104,7 +104,12 @@ const HowItWorksSection = () => {
             className="rounded-full px-8 h-12 text-base font-semibold"
           >
             <a href="#cta">
-              Скачать
+              <span className="flex items-center gap-2">
+                Скачать
+                <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-primary/10 text-primary">
+                  RuStore
+                </span>
+              </span>
             </a>
           </Button>
         </div>

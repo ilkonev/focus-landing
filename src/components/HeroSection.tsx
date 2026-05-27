@@ -38,7 +38,12 @@ const HeroSection = () => {
                 >
                   <a href="#cta">
                     <Smartphone className="w-5 h-5" />
-                    Скачать
+                    <span className="flex items-center gap-2">
+                      Скачать
+                      <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-primary/10 text-primary">
+                        RuStore
+                      </span>
+                    </span>
                   </a>
                 </Button>
                 <Button

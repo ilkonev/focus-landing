@@ -3,7 +3,7 @@ import { Shield, Smartphone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useEffect, useRef, useState } from "react";
 
-const ANDROID_DOWNLOAD_URL = "https://disk.360.yandex.ru/d/RZDeqwglGkVtqw";
+const ANDROID_DOWNLOAD_URL = "https://www.rustore.ru/catalog/app/ru.appfocus.focus";
 
 const CTASection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -66,7 +66,12 @@ const CTASection = () => {
                 rel="noopener noreferrer"
               >
                 <Smartphone className="w-5 h-5" />
-                Скачать для Android
+                <span className="flex items-center gap-2">
+                  Скачать для Android
+                  <span className="text-xs font-semibold px-2 py-0.5 rounded-full bg-primary/10 text-primary">
+                    RuStore
+                  </span>
+                </span>
               </a>
             </Button>
 
