@@ -1,13 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { Star, MessageSquarePlus } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
+
+const REVIEW_URL = "https://forms.yandex.ru/cloud/6a1f09d6d0468837b819b05a";
 
 const ReviewSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -33,14 +28,9 @@ const ReviewSection = () => {
           ref={sectionRef}
           className={`max-w-xl mx-auto text-center transition-all duration-700 ${visible}`}
         >
-          {/* Stars */}
           <div className="flex items-center justify-center gap-1 mb-5">
             {[...Array(5)].map((_, i) => (
-              <Star
-                key={i}
-                className="w-5 h-5 fill-primary text-primary"
-                style={{ animationDelay: `${i * 80}ms` }}
-              />
+              <Star key={i} className="w-5 h-5 fill-primary text-primary" />
             ))}
           </div>
 
@@ -51,35 +41,17 @@ const ReviewSection = () => {
             Поделитесь впечатлениями — ваш отзыв помогает нам становиться лучше
           </p>
 
-          <Dialog>
-            <DialogTrigger asChild>
-              <Button
-                variant="outline"
-                size="lg"
-                className="gap-2 h-12 px-8 text-base rounded-full border-primary/40 hover:border-primary hover:bg-primary/5 hover:text-primary transition-all duration-300"
-              >
-                <MessageSquarePlus className="w-5 h-5" />
-                Оставить отзыв
-              </Button>
-            </DialogTrigger>
-
-            <DialogContent className="max-w-2xl w-full p-0 overflow-hidden rounded-2xl">
-              <DialogHeader className="px-6 pt-6 pb-2">
-                <DialogTitle className="text-xl font-bold">Оставить отзыв</DialogTitle>
-              </DialogHeader>
-              <div className="px-4 pb-4 overflow-y-auto max-h-[80vh]">
-                <iframe
-                  src="https://forms.yandex.ru/cloud/6a1f09d6d0468837b819b05a?iframe=1"
-                  frameBorder="0"
-                  name="ya-form-6a1f09d6d0468837b819b05a"
-                  width="100%"
-                  height="650"
-                  title="Оставить отзыв"
-                  className="w-full border-0"
-                />
-              </div>
-            </DialogContent>
-          </Dialog>
+          <Button
+            asChild
+            variant="outline"
+            size="lg"
+            className="gap-2 h-12 px-8 text-base rounded-full border-primary/40 hover:border-primary hover:bg-primary/5 hover:text-primary transition-all duration-300"
+          >
+            <a href={REVIEW_URL} target="_blank" rel="noopener noreferrer">
+              <MessageSquarePlus className="w-5 h-5" />
+              Оставить отзыв
+            </a>
+          </Button>
         </div>
       </div>
     </section>
