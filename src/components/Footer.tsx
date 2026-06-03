@@ -48,16 +48,24 @@ const Footer = () => {
             </Link>
           </div>
 
-          {/* Support button and Copyright */}
+          {/* Support button, Cookie settings and Copyright */}
           <div className="flex flex-col items-center md:items-end gap-3">
-            <a
-              href={SUPPORT_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="px-3 py-1 rounded-full border border-border text-xs font-medium text-muted-foreground hover:text-primary hover:border-primary hover:bg-primary/5 transition-colors duration-300"
-            >
-              Поддержать
-            </a>
+            <div className="flex items-center gap-2">
+              <a
+                href={SUPPORT_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-3 py-1 rounded-full border border-border text-xs font-medium text-muted-foreground hover:text-primary hover:border-primary hover:bg-primary/5 transition-colors duration-300"
+              >
+                Поддержать
+              </a>
+              <button
+                onClick={() => window.dispatchEvent(new Event("show-cookie-banner"))}
+                className="px-3 py-1 rounded-full border border-border text-xs font-medium text-muted-foreground hover:text-primary hover:border-primary hover:bg-primary/5 transition-colors duration-300"
+              >
+                Настройки куки
+              </button>
+            </div>
             <p className="text-sm text-muted-foreground">
               © {new Date().getFullYear()} Focus
             </p>
